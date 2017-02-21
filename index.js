@@ -1,6 +1,8 @@
 'use strict';
 
-const image = document.querySelector('.image');
+const cloudLayer1 = document.querySelector('.cloud-layer-1');
+const cloudLayer2 = document.querySelector('.cloud-layer-2');
+const coins = document.querySelector('.coins');
 const image2 = document.querySelector('.image2');
 const yoshi = document.querySelector('.yoshi');
 const yoshiContainer = document.querySelector('.yoshi-container');
@@ -11,19 +13,17 @@ var flipped = false;
 
 yoshi.addEventListener('animationend', function() {
   yoshi.classList.toggle('animate-now');
-  console.log('animation has ended');
   yoshi.classList.toggle('sprite');
-  console.log('ended');
   animating = false;
-  console.log(animating);
 })
 
 window.addEventListener('scroll', function() {
-  image.style.left = `-${window.pageYOffset * .2}px`;
+  cloudLayer1.style.left = `-${window.pageYOffset * .3}px`;
+  cloudLayer2.style.left = `-${window.pageYOffset * .2}px`;
   image2.style.left = `-${window.pageYOffset * .4}px`;
+  coins.style.left = `-${window.pageYOffset * .4}px`;
 
   if (animating === false) {
-    console.log('here');
     yoshi.classList.toggle('sprite');
     yoshi.classList.toggle('animate-now');
     animating = true;
