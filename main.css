@@ -17,9 +17,80 @@ body {
 
 .yoshi-container {
   position: absolute;
-  left: 50%;
+  left: 20%;
   bottom: 150px;
+  width: 500px;
+  height: 275px;
 }
+
+.yoshi {
+  position: absolute;
+  bottom: 0;
+  background: url('images/YoshiTest2.gif') no-repeat 32.435% 3.187%;
+  	width: 51px;
+  	height: 60px;
+}
+
+.comment-box {
+  position: absolute;
+  left: 100px;
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 3px solid grey;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.comment-box:before {
+   content:"";
+   position: absolute;
+   right: 90%;
+   top: 170px;
+   width: 0;
+   height: 0;
+   border-top: 23px solid transparent;
+   border-right: 62px solid #fff;
+   border-bottom: 23px solid transparent;
+   transform: rotate(-34deg);
+}
+
+/*.comment-box p {
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
+  typing 3.5s steps(40, end),
+  blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from {width: 0}
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}*/
+
+
+/*.comment-box-bottom {
+  position: absolute;
+  left: 100px;
+  top: 110px;
+  width: 100px;
+  height: 100px;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 40%;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  background-color: black;
+  border: 3px solid grey;
+}*/
 
 .image2 {
   position: absolute;
@@ -30,12 +101,6 @@ body {
   overflow: hidden;
   background-image: url("images/ground-copy.png");
   background-repeat: repeat;
-}
-
-.yoshi {
-  background: url('images/YoshiTest2.gif') no-repeat 32.435% 3.187%;
-  	width: 51px;
-  	height: 60px;
 }
 
 .cloud-layer-1 {
