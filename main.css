@@ -98,9 +98,22 @@ body {
   width: 4000px;
   left: 0;
   bottom: 0;
-  overflow: hidden;
+  /*overflow: hidden;*/
   background-image: url("images/ground-copy.png");
   background-repeat: repeat;
+}
+
+.ground2 {
+  position: absolute;
+  height: 50px;
+  width: 600px;
+  left: 1300px;
+  bottom: 150px;
+  overflow: hidden;
+  background-image: url("images/ground-copy.png");
+  /*background-color: black;*/
+  background-repeat: repeat
+  z-index
 }
 
 .cloud-layer-1 {
@@ -218,19 +231,54 @@ body {
 
 
 
-.sprite {
+.sprite-run {
 	background: url('images/YoshiTest2.gif') no-repeat -10px -304px;
 	width: 52px;
 	height: 60px;
 }
 
-@keyframes play {
+@keyframes run {
   100% { background-position: -583px -304px; }
 }
 
-.animate-now {
-  animation: play 1.5s steps(9);
+.animate-run {
+  animation: run 1.5s steps(9);
 }
+
+
+/*SECOND ANIMATION*/
+
+.sprite-jump {
+	background: url('images/yoshiTest2.gif') no-repeat -10px -102px;
+	width: 50px;
+	height: 66px;
+}
+
+@keyframes jump {
+  100% { background-position: -192px -102px; }
+}
+
+.animate-jump {
+  animation: jump .9s steps(3);
+}
+
+@keyframes jumpvert {
+  0% { transform: translate(0px, 0px); }
+  50% { transform: translate(0px, -60px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+.animate-jump-vert {
+  /*transition: all linear;*/
+  animation: jumpvert 1.1s;
+}
+
+
+
+
+
+
+
 
 .coins {
   position: absolute;
