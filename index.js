@@ -1,5 +1,7 @@
 'use strict';
 
+// check to see if spacebar is interfereing with jumping on surge
+
 const cloudLayer1 = document.querySelector('.cloud-layer-1');
 const cloudLayer2 = document.querySelector('.cloud-layer-2');
 const coins = document.querySelector('.coins');
@@ -8,6 +10,13 @@ const yoshi = document.querySelector('.yoshi');
 const yoshiContainer = document.querySelector('.yoshi-container');
 const commentBoxBottom = document.querySelector('.comment-box-bottom');
 const coinBlock1 = document.querySelector('.coin-block-1');
+const coin1 = document.querySelector('.coin1');
+
+
+
+
+
+const coinDiv = document.querySelector('.coin-div');
 
 var running = false;
 var jumping = false;
@@ -21,6 +30,8 @@ yoshi.addEventListener('animationend', function() {
   yoshi.classList.remove('animate-jump');
   yoshi.classList.remove('sprite-jump');
   yoshiContainer.classList.remove('animate-jump-vert');
+  coinDiv.classList.remove('animate-coin-vert');
+  coin1.classList.remove('animate-coin-spin');
   jumping = false;
   running = false;
   console.log(jumping, running);
@@ -61,7 +72,7 @@ window.addEventListener('scroll', function() {
   if (window.pageYOffset > 2225 && window.pageYOffset < 2475) {
     console.log(window.pageYOffset, yoshiContainer.style );
       yoshiContainer.style.bottom =
-        `${((window.pageYOffset - 2225) * .2 ) + 150}px`;
+      `${((window.pageYOffset - 2225) * .2 ) + 150}px`;
   }
 
   if (window.pageYOffset > 2476 && window.pageYOffset < 3990) {
@@ -97,9 +108,10 @@ document.addEventListener('keydown', function(e) {
       setTimeout(function() {
         console.log(window.pageYOffset);
 
-        if (window.pageYOffset > 1430 && window.pageYOffset < 1590 ) {
-          console.log('contact');
+        if (window.pageYOffset > 1430 && window.pageYOffset < 1650 ) {
           coinBlock1.src = "images/used-coin-block.png"
+          coinDiv.classList.toggle('animate-coin-vert');
+          coin1.classList.toggle('animate-coin-spin');
         }
       }, 200);
 
@@ -164,3 +176,22 @@ function typewriter() {
 }
 
 typewriter();
+
+// commentBoxBottom.style.display = 'none';
+
+
+var checkCollision = function(coordinates, array) {
+  // Check to see if coordinates are in an array.
+  // [
+  //  {start: 'number', end: 'number', identity: 'coinBlock1'},
+  //  {start: 'number', end: 'number', identity: 'coinBlock2'}
+  //  ]
+  for (var i = 0; i < array.length; i++) {
+    if (coordinates > array[i].start && coordinates < array[i].end ) {
+
+      // if coordinates are in array execute coin block and coin animation
+
+    }
+
+  }
+}
