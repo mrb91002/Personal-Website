@@ -63,6 +63,18 @@ window.addEventListener('scroll', function() {
       yoshiContainer.style.bottom =
         `${((window.pageYOffset - 2225) * .2 ) + 150}px`;
   }
+
+  if (window.pageYOffset > 2476 && window.pageYOffset < 3990) {
+      yoshiContainer.style.bottom =
+        `${200}px`;
+  }
+
+  if (window.pageYOffset > 2000 && window.pageYOffset < 2224) {
+      yoshiContainer.style.bottom =
+        `${150}px`;
+  }
+
+  //3990
   //  else {
   //   yoshiContainer.style.bottom =
   //     `${window.pageYOffset - 2225 + 150}px`;
@@ -96,8 +108,10 @@ document.addEventListener('keydown', function(e) {
       yoshi.classList.toggle('sprite-jump');
       yoshi.classList.toggle('animate-jump');
     }
+  }
 
-
+  if (e.keyCode === 13) {
+    commentBoxBottom.style.display = 'none';
   }
 });
 
